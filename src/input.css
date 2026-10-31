@@ -43,8 +43,8 @@
   .thread { stroke-dasharray: 1; stroke-dashoffset: 0; }
   .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s ease; }
   .link-u:hover, .link-u[aria-current="page"] { background-size: 100% 1px; }
-  .lift { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
-  .lift:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(120,24,69,.45); }
+  .lift { box-shadow: 0 4px 18px rgba(120,24,69,.16); transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s cubic-bezier(.2,.7,.2,1); }
+  .lift:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(120,24,69,.28); }
   .lift:hover .zoom { transform: scale(1.06); }
   .zoom { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
 }
