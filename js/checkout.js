@@ -15,8 +15,9 @@
         b.addEventListener("click", function () { A.change(i.id, d[1]); });
         ctl.appendChild(b); if (k === 0) ctl.appendChild(A.el("span", "w-6 text-center", String(i.qty)));
       });
-      var remove = A.el("button", "ml-2 text-xs text-mulberry/70 underline-offset-2 transition-colors hover:text-mulberry hover:underline", "Remove");
+      var remove = A.el("button", "ml-2 rounded-full p-2 text-mulberry/70 transition-colors hover:bg-blush hover:text-mulberry", "");
       remove.type = "button"; remove.setAttribute("aria-label", "Remove " + p.name + " from cart");
+      remove.innerHTML = '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
       remove.addEventListener("click", function () { A.remove(i.id); });
       ctl.appendChild(remove);
       li.appendChild(info); li.appendChild(ctl); li.appendChild(A.el("span", "w-24 text-right text-mulberry", A.money(p.price * i.qty)));
