@@ -1,0 +1,15 @@
+{
+  "name": "the-artloft",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Artloft - handmade crochet storefront (frontend only, WhatsApp checkout)",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@fontsource/cormorant-garamond": "5.1.1",
+    "@fontsource/jost": "5.1.1",
+    "tailwindcss": "3.4.17"
+  }
+}

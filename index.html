@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-page="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; manifest-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>The Artloft | The garden that never wilts</title>
+  <meta name="description" content="Hand-crocheted flowers, bouquets, bags and keepsakes by The Artloft. Order on WhatsApp.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+</head>
+<body>
+<main id="main">
+  <section class="relative overflow-hidden">
+    <svg class="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <path class="thread animate-draw" pathLength="1" d="M-20 600 C 180 430, 330 720, 560 540 S 920 300, 1220 400" stroke="#C47B89" stroke-width="2" stroke-linecap="round" stroke-opacity=".55"/>
+    </svg>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-12 md:grid-cols-12 md:pb-28 md:pt-16">
+      <div class="md:col-span-7">
+        <p class="animate-rise text-base text-terracotta [animation-delay:100ms]">Hand-crocheted flowers and keepsakes</p>
+        <h1 class="mt-5 font-display text-6xl font-medium leading-[0.95] text-espresso sm:text-7xl lg:text-[6.5rem]">
+          <span class="block animate-rise [animation-delay:250ms]">The garden</span>
+          <span class="block animate-rise text-mulberry [animation-delay:400ms]">that never</span>
+          <span class="block animate-rise [animation-delay:550ms]">wilts.</span>
+        </h1>
+        <p class="mt-8 max-w-md animate-rise text-lg leading-relaxed text-espresso/75 [animation-delay:750ms]">Every petal is looped by hand, one stitch at a time, so the moments you give and the ones you keep can bloom for good.</p>
+        <div class="mt-9 flex animate-rise flex-wrap gap-4 [animation-delay:900ms]">
+          <a href="shop.html" class="btn btn-primary">Explore the collection</a>
+          <a href="custom.html" class="btn btn-ghost">Create something custom</a>
+        </div>
+      </div>
+      <div class="relative mx-auto w-full max-w-sm md:col-span-5 md:max-w-none">
+        <div class="aspect-[4/5] overflow-hidden rounded-t-[999px] bg-blush animate-arch [animation-delay:300ms]">
+          <img src="images/hero-bouquet.jpg" alt="Hands tying a bouquet of crochet tulips in mulberry, blush and cream" class="h-full w-full object-cover">
+        </div>
+        <div class="absolute -bottom-8 -left-4 h-28 w-28 animate-rise sm:-left-10 sm:h-32 sm:w-32 [animation-delay:1.2s]">
+          <div class="h-full w-full animate-float"><img src="images/logo.png" alt="The Artloft seal" class="h-full w-full animate-spin rounded-full shadow-xl ring-4 ring-cream"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="overflow-hidden border-y border-rose/30 bg-blush py-4" aria-label="What we make">
+    <div class="flex w-max">
+      <div id="marquee" class="flex shrink-0 animate-marquee items-center gap-10 pr-10 font-display text-2xl italic text-mulberry">
+        <span>Flowers</span><span class="text-rose">&#10047;</span><span>Bouquets</span><span class="text-rose">&#10047;</span><span>Sunflowers</span><span class="text-rose">&#10047;</span><span>Pot covers</span><span class="text-rose">&#10047;</span><span>Handbags</span><span class="text-rose">&#10047;</span><span>Tote bags</span><span class="text-rose">&#10047;</span><span>Keychains</span><span class="text-rose">&#10047;</span><span>Bookmarks</span><span class="text-rose">&#10047;</span><span>Bracelets</span><span class="text-rose">&#10047;</span><span>Made your way</span><span class="text-rose">&#10047;</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="mx-auto max-w-6xl px-5 py-24">
+    <div class="reveal mb-12 flex flex-wrap items-end justify-between gap-4">
+      <h2 class="font-display text-4xl font-medium text-mulberry sm:text-5xl">Fresh off the hook</h2>
+      <a href="shop.html" class="link-u text-mulberry">See the full collection</a>
+    </div>
+    <div id="grid" data-limit="3" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <section class="bg-mulberry py-24 text-cream">
+    <div class="reveal mx-auto max-w-3xl px-5 text-center">
+      <h2 class="font-display text-4xl font-medium sm:text-6xl">Have something else in mind?</h2>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-cream/80">Wedding colours, a name on a tote, a keychain shaped like your pet. If you can picture it, it can be crocheted.</p>
+      <a href="custom.html" class="btn mt-9 bg-cream text-mulberry hover:bg-blush">Start a custom order</a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-24">
+    <h2 class="reveal font-display text-4xl font-medium text-mulberry sm:text-5xl">Ordering is a conversation</h2>
+    <ol class="mt-12 grid gap-8 md:grid-cols-3">
+      <li class="reveal border-t border-rose/50 pt-5"><span class="font-display text-3xl text-terracotta">1</span><h3 class="mt-2 font-display text-2xl font-semibold">Fill your bag</h3><p class="mt-2 text-espresso/70">Add anything you like from the collection.</p></li>
+      <li class="reveal border-t border-rose/50 pt-5 [--d:120ms]"><span class="font-display text-3xl text-terracotta">2</span><h3 class="mt-2 font-display text-2xl font-semibold">Send it on WhatsApp</h3><p class="mt-2 text-espresso/70">Add your delivery details and we receive a ready-made order message.</p></li>
+      <li class="reveal border-t border-rose/50 pt-5 [--d:240ms]"><span class="font-display text-3xl text-terracotta">3</span><h3 class="mt-2 font-display text-2xl font-semibold">Confirm and pay</h3><p class="mt-2 text-espresso/70">We confirm delivery charges and share payment details in the chat.</p></li>
+    </ol>
+  </section>
+</main>
+<script src="js/shop.js"></script>
+</body>
+</html>

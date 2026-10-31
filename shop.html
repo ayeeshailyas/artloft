@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-page="shop">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; manifest-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Collection | The Artloft</title>
+  <meta name="description" content="Browse crochet flowers, bouquets, bags, keychains, bookmarks and more.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+</head>
+<body>
+<main id="main" class="bg-blush">
+  <section class="mx-auto max-w-6xl px-5 pb-24 pt-16">
+    <h1 class="animate-rise font-display text-5xl font-medium text-mulberry sm:text-6xl">The collection</h1>
+    <p class="mt-4 max-w-md animate-rise text-espresso/70 [animation-delay:150ms]">Choose a piece, add it to your bag and send your order on WhatsApp.</p>
+    <div class="mt-10 grid gap-8 md:grid-cols-[10rem_minmax(0,1fr)] md:items-start md:gap-10">
+      <aside class="animate-rise md:sticky md:top-6 [animation-delay:300ms]">
+        <h2 class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-mulberry">Filter by</h2>
+        <div id="filters" class="flex flex-wrap gap-2 md:flex-col md:items-stretch" role="group" aria-label="Filter products"></div>
+      </aside>
+      <div id="grid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
+</main>
+<script src="js/shop.js"></script>
+</body>
+</html>

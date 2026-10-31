@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-page="custom">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; manifest-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Custom orders | The Artloft</title>
+  <meta name="description" content="Request a custom crochet piece made just for you.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+</head>
+<body>
+<main id="main" class="bg-mulberry text-cream">
+  <section class="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+    <div>
+      <h1 class="animate-rise font-display text-5xl font-medium leading-tight sm:text-6xl">Made just for you</h1>
+      <p class="mt-6 max-w-md animate-rise text-lg leading-relaxed text-cream/80 [animation-delay:150ms]">Tell us what you have in mind: colours, size, occasion. We will reply on WhatsApp with a price and a timeline before anything is stitched.</p>
+    </div>
+    <form id="custom-form" class="animate-rise rounded-2xl bg-cream p-6 text-espresso [animation-delay:300ms] sm:p-8" novalidate>
+      <div class="mb-4"><label class="label" for="c-name">Your name</label><input class="field" id="c-name" type="text" maxlength="60" autocomplete="name" required></div>
+      <div class="mb-4"><label class="label" for="c-type">What would you like?</label><select class="field" id="c-type"></select></div>
+      <div class="mb-5"><label class="label" for="c-details">Describe your idea</label><textarea class="field" id="c-details" rows="5" maxlength="600" placeholder="Colours, size, occasion, a date you need it by" required></textarea></div>
+      <p id="c-error" class="mb-3 hidden text-sm text-terracotta" role="alert"></p>
+      <button type="submit" class="btn btn-primary w-full">Send request on WhatsApp</button>
+    </form>
+  </section>
+</main>
+<script src="js/custom.js"></script>
+</body>
+</html>

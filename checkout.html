@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-page="checkout">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'; manifest-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Checkout | The Artloft</title>
+  <meta name="description" content="Review your bag and send your order on WhatsApp.">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/layout.js"></script>
+</head>
+<body>
+<main id="main" class="bg-blush">
+  <section class="mx-auto max-w-6xl px-5 pb-24 pt-16">
+    <h1 class="animate-rise font-display text-5xl font-medium text-mulberry sm:text-6xl">Your bag</h1>
+    <div id="empty" class="mt-10 hidden animate-rise"><p class="text-espresso/70">Your bag is empty. Pick something you love from the collection.</p><a href="shop.html" class="btn btn-primary mt-6">Browse the collection</a></div>
+    <div id="filled" class="mt-10 grid hidden gap-10 lg:grid-cols-5">
+      <div class="animate-rise lg:col-span-3">
+        <ul id="lines" class="divide-y divide-rose/25 rounded-2xl bg-cream px-5"></ul>
+        <div class="mt-4 flex items-center justify-between px-1"><button id="clear" type="button" class="link-u text-sm text-espresso/60">Empty bag</button>
+          <p class="text-xl">Subtotal <span id="subtotal" class="ml-2 font-medium text-mulberry"></span></p></div>
+        <p class="mt-1 px-1 text-right text-xs text-espresso/60">Delivery charges are confirmed on WhatsApp.</p>
+      </div>
+      <form id="checkout" class="animate-rise space-y-4 rounded-2xl bg-cream p-6 [animation-delay:150ms] lg:col-span-2" novalidate>
+        <h2 class="font-display text-2xl font-semibold">Delivery details</h2>
+        <div><label class="label" for="o-name">Full name</label><input class="field" id="o-name" type="text" maxlength="60" autocomplete="name" required></div>
+        <div><label class="label" for="o-phone">Phone number</label><input class="field" id="o-phone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" required></div>
+        <div><label class="label" for="o-address">Delivery address and city</label><textarea class="field" id="o-address" rows="2" maxlength="250" autocomplete="street-address" required></textarea></div>
+        <div><label class="label" for="o-pay">Payment method</label><select class="field" id="o-pay"></select></div>
+        <div><label class="label" for="o-notes">Notes (optional)</label><textarea class="field" id="o-notes" rows="2" maxlength="300"></textarea></div>
+        <p id="o-error" class="hidden text-sm text-terracotta" role="alert"></p>
+        <button type="submit" class="btn btn-primary w-full">Place order on WhatsApp</button>
+        <p id="sent" class="hidden rounded-lg bg-blush p-3 text-sm text-mulberry" role="status">WhatsApp has opened with your order. Press send there to confirm it. If nothing opened, check your pop-up settings and try again.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="js/checkout.js"></script>
+</body>
+</html>
