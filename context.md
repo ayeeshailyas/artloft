@@ -58,13 +58,13 @@ Hero entrance (staggered text rise, arch image reveal, thread line drawing, floa
 ## How ordering works
 1. Customer adds products to the bag (header "Bag" opens the checkout page).
 2. On the checkout page they enter name, phone, delivery address, payment method (cash on delivery, bank transfer, Easypaisa / JazzCash) and optional notes.
-3. "Place order on WhatsApp" opens `wa.me/<number>` with a pre-written order message (items, quantities, subtotal, details).
+3. "Place order on WhatsApp" opens the Vercel `/api/whatsapp` redirect with a pre-written order message (items, quantities, subtotal, details).
 4. The owner confirms delivery charges and payment details in the chat.
 
 Custom requests use the form on `custom.html` and are sent to WhatsApp the same way.
 
 ## Setup checklist
-1. Open `js/config.js` and set `whatsappNumber` (digits only, with country code, e.g. `923001234567`).
+1. In Vercel project settings, add `WHATSAPP_NUMBER` as an environment variable (digits only, with country code, e.g. `923001234567`). Do not put the number in tracked files.
 2. Edit `js/products.js`: names, descriptions, prices.
 3. Drop photos into `images/products/` using the file names in `js/products.js`.
 4. If you change classes in `index.html` or `js/*.js`, run `npm run build`.
@@ -73,6 +73,7 @@ Custom requests use the form on `custom.html` and are sent to WhatsApp the same 
 ## Security approach
 - Strict Content-Security-Policy (meta tag): only same-origin scripts, styles, fonts and images; no inline scripts or styles; no network requests (`connect-src 'none'`); forms cannot submit anywhere.
 - Customer or product data is only ever inserted with `textContent`. The only HTML injected is the fixed header/footer markup in `js/layout.js`, which contains no user data.
+- The WhatsApp number is read by the Vercel serverless function from `WHATSAPP_NUMBER`; it is not included in the frontend source or Git history.
 - All user input is trimmed, stripped of control characters and `<` `>`, length-limited and validated before use.
 - Prices are read only from `js/products.js`. The saved bag holds just product ids and quantities and is re-validated on load, so edited browser storage cannot change prices.
 - WhatsApp opens with `noopener,noreferrer`; `referrer` policy is `no-referrer`.

@@ -41,9 +41,7 @@
     clear: function () { cart = []; commit(); },
     onChange: function (f) { listeners.push(f); },
     whatsapp: function (lines) {
-      var n = String(CFG.whatsappNumber).replace(/\D/g, "");
-      if (!/^\d{10,15}$/.test(n)) return "WhatsApp number is not set yet. Add it in js/config.js.";
-      window.open("https://wa.me/" + n + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener,noreferrer");
+      window.open(CFG.whatsappEndpoint + "?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener,noreferrer");
       return "";
     },
     showError: function (node, msg) { node.textContent = msg; node.classList.remove("hidden"); },

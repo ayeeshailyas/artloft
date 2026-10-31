@@ -33,6 +33,18 @@
       clearTimeout(tt); tt = setTimeout(function () { toast.classList.add("opacity-0", "translate-y-4"); }, 1800);
     };
 
+    var whatsapp = A.el("a", "whatsapp-float");
+    whatsapp.id = "whatsapp-float";
+    whatsapp.href = "#";
+    whatsapp.setAttribute("aria-label", "Chat with The Artloft on WhatsApp");
+    whatsapp.innerHTML = '<svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.83 11.83 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.59 5.93L.14 24l6.38-1.67a11.85 11.85 0 0 0 5.56 1.38h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.17-1.23-6.15-3.4-8.39Zm-8.44 18.2h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.79.99 1.01-3.7-.23-.38a9.82 9.82 0 0 1-1.51-5.17C2.17 6.42 6.61 1.98 12.08 1.98a9.8 9.8 0 0 1 6.97 2.89 9.82 9.82 0 0 1 2.89 6.99c0 5.47-4.44 9.82-9.86 9.82Zm5.4-7.35c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.51-1.79-1.69-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.71.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>';
+    whatsapp.addEventListener("click", function (e) {
+      e.preventDefault();
+      var error = A.whatsapp(["Hello The Artloft! I would love to know more about your handmade crochet products."]);
+      if (error) A.toast(error);
+    });
+    document.body.appendChild(whatsapp);
+
     var badge = document.getElementById("bag-count"), last = A.count();
     function sync() {
       var c = A.count(); badge.textContent = String(c);
