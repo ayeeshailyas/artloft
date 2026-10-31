@@ -15,6 +15,10 @@
         b.addEventListener("click", function () { A.change(i.id, d[1]); });
         ctl.appendChild(b); if (k === 0) ctl.appendChild(A.el("span", "w-6 text-center", String(i.qty)));
       });
+      var remove = A.el("button", "ml-2 text-xs text-mulberry/70 underline-offset-2 transition-colors hover:text-mulberry hover:underline", "Remove");
+      remove.type = "button"; remove.setAttribute("aria-label", "Remove " + p.name + " from cart");
+      remove.addEventListener("click", function () { A.remove(i.id); });
+      ctl.appendChild(remove);
       li.appendChild(info); li.appendChild(ctl); li.appendChild(A.el("span", "w-24 text-right text-mulberry", A.money(p.price * i.qty)));
       list.appendChild(li);
     });
@@ -27,7 +31,7 @@
     var err = $("o-error"); A.hideError(err);
     var name = A.clean($("o-name").value, 60), phone = A.clean($("o-phone").value, 20), addr = A.clean($("o-address").value, 250),
         notes = A.clean($("o-notes").value, 300), pay = A.CFG.paymentOptions.indexOf($("o-pay").value) >= 0 ? $("o-pay").value : A.CFG.paymentOptions[0];
-    if (!A.items().length) return A.showError(err, "Your bag is empty.");
+    if (!A.items().length) return A.showError(err, "Your cart is empty.");
     if (name.length < 2) return A.showError(err, "Please enter your full name.");
     if (!/^[+0-9\s-]{7,20}$/.test(phone)) return A.showError(err, "Please enter a valid phone number.");
     if (addr.length < 10) return A.showError(err, "Please enter your full delivery address and city.");
@@ -39,8 +43,36 @@
     $("sent").classList.remove("hidden");
   }
 
+  function setupPaymentPicker() {
+    var select = $("o-pay"), picker = $("o-pay-picker");
+    var trigger = A.el("button", "custom-select-trigger", "");
+    trigger.type = "button"; trigger.setAttribute("aria-haspopup", "listbox"); trigger.setAttribute("aria-expanded", "false");
+    var label = A.el("span", "", select.options[0].textContent);
+    var arrow = A.el("span", "custom-select-arrow", "⌄"); trigger.appendChild(label); trigger.appendChild(arrow);
+    var menu = A.el("div", "custom-select-menu"); menu.setAttribute("role", "listbox");
+    Array.prototype.forEach.call(select.options, function (option, index) {
+      var item = A.el("button", "custom-select-option" + (index === 0 ? " is-selected" : ""), option.textContent);
+      item.type = "button"; item.setAttribute("role", "option"); item.setAttribute("aria-selected", String(index === 0));
+      item.addEventListener("click", function () {
+        select.value = option.value; label.textContent = option.textContent;
+        menu.querySelectorAll(".custom-select-option").forEach(function (node) { node.classList.remove("is-selected"); node.setAttribute("aria-selected", "false"); });
+        item.classList.add("is-selected"); item.setAttribute("aria-selected", "true");
+        menu.classList.remove("is-open"); trigger.setAttribute("aria-expanded", "false");
+      });
+      menu.appendChild(item);
+    });
+    trigger.addEventListener("click", function () {
+      var open = menu.classList.contains("is-open"); menu.classList.toggle("is-open", !open); trigger.setAttribute("aria-expanded", String(!open));
+    });
+    document.addEventListener("click", function (e) {
+      if (!picker.contains(e.target)) { menu.classList.remove("is-open"); trigger.setAttribute("aria-expanded", "false"); }
+    });
+    picker.appendChild(trigger); picker.appendChild(menu);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     A.fillSelect($("o-pay"), A.CFG.paymentOptions);
+    setupPaymentPicker();
     render(); A.onChange(render);
     $("checkout").addEventListener("submit", function (e) { e.preventDefault(); place(); });
     $("clear").addEventListener("click", function () { A.clear(); $("sent").classList.add("hidden"); });

@@ -24,8 +24,8 @@
     row.appendChild(A.el("span", "whitespace-nowrap text-mulberry", A.money(p.price)));
     w.appendChild(row);
     w.appendChild(A.el("p", "mt-1 px-1 text-xs leading-relaxed text-espresso/70", p.desc));
-    var b = A.el("button", "btn btn-ghost ml-1 mt-3 px-3 py-1.5 text-sm", "Add to bag"); b.type = "button";
-    b.addEventListener("click", function () { A.add(p.id); A.toast(p.name + " added to your bag"); });
+    var b = A.el("button", "btn btn-ghost ml-1 mt-3 px-3 py-1.5 text-sm", "Add to cart"); b.type = "button";
+    b.addEventListener("click", function () { A.add(p.id); A.toast(p.name + " added to your cart"); });
     w.appendChild(b);
     return w;
   }

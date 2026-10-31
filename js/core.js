@@ -34,6 +34,10 @@
       if (l.qty <= 0) cart = cart.filter(function (i) { return i.id !== id; });
       commit();
     },
+    remove: function (id) {
+      cart = cart.filter(function (i) { return i.id !== id; });
+      commit();
+    },
     clear: function () { cart = []; commit(); },
     onChange: function (f) { listeners.push(f); },
     whatsapp: function (lines) {
