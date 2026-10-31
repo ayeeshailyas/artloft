@@ -37,6 +37,8 @@
   .custom-select-option:hover, .custom-select-option.is-selected { @apply bg-blush text-mulberry; }
   .mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-0.5rem); transition: max-height .5s ease, opacity .35s ease, transform .5s ease; }
   .mobile-menu.is-open { max-height: 20rem; opacity: 1; transform: translateY(0); }
+  .whatsapp-float { @apply fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-mulberry; }
+  .whatsapp-icon { @apply h-7 w-7; }
 }
 
 @layer components {
