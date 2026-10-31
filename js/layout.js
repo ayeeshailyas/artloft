@@ -17,7 +17,7 @@
     '<div class="flex items-center gap-2"><a id="bag-link" href="checkout.html" class="flex items-center gap-2 rounded-full border border-mulberry/40 px-4 py-2 text-sm text-mulberry transition-colors hover:bg-mulberry hover:text-cream" aria-label="Cart and checkout">' +
     '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Cart</span><span id="bag-count" class="min-w-5 rounded-full bg-mulberry px-1.5 text-center text-xs leading-5 text-cream">0</span></a>' +
     '<button id="menu-btn" type="button" class="rounded-full p-2 md:hidden" aria-label="Menu" aria-expanded="false"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button></div></div>' +
-    '<nav id="menu" class="hidden border-t border-rose/20 px-5 py-4 md:hidden" aria-label="Mobile"><div class="flex flex-col gap-4">' + nav("w-fit py-1") + "</div></nav></header>";
+    '<nav id="menu" class="mobile-menu border-t border-rose/20 px-5 md:hidden" aria-label="Mobile"><div class="flex flex-col gap-4 py-4">' + nav("w-fit py-1") + "</div></nav></header>";
   var footer = '<footer class="border-t border-rose/30 py-12 text-center text-sm text-espresso/70"><img src="images/logo.png" alt="The Artloft" class="mx-auto h-20 w-20 rounded-full">' +
     '<p class="mt-4">Handmade crochet. Orders and questions on WhatsApp.</p><p class="mt-3 flex justify-center gap-6">' + nav("py-1 hover:text-mulberry") + '</p><p class="mt-5 text-xs text-espresso/50">&copy; <span id="year"></span> The Artloft. All rights reserved.</p></footer>';
 
@@ -42,7 +42,7 @@
     sync(); A.onChange(sync);
 
     var btn = document.getElementById("menu-btn"), menu = document.getElementById("menu");
-    btn.addEventListener("click", function () { var o = menu.classList.toggle("hidden"); btn.setAttribute("aria-expanded", String(!o)); });
+    btn.addEventListener("click", function () { var open = menu.classList.toggle("is-open"); btn.setAttribute("aria-expanded", String(open)); });
 
     var items = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
