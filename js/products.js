@@ -5,7 +5,6 @@
 */
 window.ARTLOFT_PRODUCTS = Object.freeze([
   { id: "rose-bloom",     cat: "Flowers",   name: "Crochet Rose",            price: 350,  image: "rose-bloom.jpg",     desc: "A single long-stem rose in soft cotton yarn. Never wilts." },
-  { id: "sunflower-stem", cat: "Sunflowers", name: "Sunflower Stem",         price: 450,  image: "sunflower-stem.jpg", desc: "A bright, full-petal sunflower on a wired stem." },
   { id: "garden-bouquet", cat: "Bouquets",  name: "Garden Bouquet",          price: 2800, image: "garden-bouquet.jpg", desc: "A hand-tied bouquet of mixed blooms, wrapped and ready to gift." },
   { id: "pot-cover",      cat: "Pot covers", name: "Flower Pot Cover",       price: 900,  image: "pot-cover.jpg",      desc: "A snug crochet sleeve that dresses up any plain pot." },
   { id: "handbag",        cat: "Handbags",  name: "Crochet Handbag",         price: 3500, image: "handbag.jpg",        desc: "A structured everyday handbag with a lined interior." },
