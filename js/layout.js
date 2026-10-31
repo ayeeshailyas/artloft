@@ -4,7 +4,7 @@
   document.documentElement.classList.add("js");
   var A = window.Artloft;
   var page = document.documentElement.getAttribute("data-page") || "";
-  var links = [["shop.html", "Collection", "shop"], ["custom.html", "Custom orders", "custom"], ["about.html", "About", "about"]];
+  var links = [["index.html", "Home", "home"], ["shop.html", "Collection", "shop"], ["custom.html", "Custom orders", "custom"], ["about.html", "About", "about"]];
 
   function nav(cls) {
     return links.map(function (l) {
